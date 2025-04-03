@@ -11,8 +11,9 @@
 5. 支持单选题和多选题
 6. 支持填空题
 
-软件包下载地址：https://github.com/666cy666/AutoQuest/releases/download/AutoQuest/AutoQuestV1.0.zip
-github项目地址：https://github.com/666cy666/AutoQuest
+**软件包下载地址：https://github.com/666cy666/AutoQuest/releases/download/AutoQuest/AutoQuestV1.0.zip**
+
+**github项目地址：https://github.com/666cy666/AutoQuest**
 
 ## 使用说明
 
