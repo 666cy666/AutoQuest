@@ -1,0 +1,7 @@
+selenium === 4.14.0
+webdriver-manager === 3.8.5
+lxml === 4.9.3
+drissionpage === 4.1.0.7
+injector === 0.22.0
+PyQt6 === 6.8.0
+pyinstaller

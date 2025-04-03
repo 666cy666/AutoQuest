@@ -1,0 +1,15 @@
+{
+  "url": "https://www.wjx.cn/vm/tL4FoDX.aspx",
+  "count": 10,
+  "mode": {
+    "mode-type": "average-mode",
+    "average-mode": "平均模式：所有选项初始化概率均一致",
+    "other-mode": "其他模式：对于”其他“选项，需要手动填写答案的选项概率为1-5%"
+  },
+  "topic-type": {
+    "1": "判断题",
+    "2": "填空题",
+    "3": "单选题",
+    "4": "多选题"
+  }
+}

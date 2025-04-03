@@ -1,0 +1,267 @@
+[
+    {
+        "topic-type": "4",
+        "topic-title": "您通过哪些途径获取法国文化相关信息?（可多选）【多选题】",
+        "topic-answer-list": [
+            {
+                "text": "A. 法国电影、电视剧",
+                "weight": 57,
+                "input": false
+            },
+            {
+                "text": "B. 法语书籍、报刊",
+                "weight": 25,
+                "input": false
+            },
+            {
+                "text": "C. 社交媒体平台",
+                "weight": 25,
+                "input": false
+            },
+            {
+                "text": "D. 学校法语或法国文化课程",
+                "weight": 25,
+                "input": false
+            }
+        ]
+    },
+    {
+        "topic-type": "3",
+        "topic-title": "您参与过中国面向法国举办的文化推广活动吗?",
+        "topic-answer-list": [
+            {
+                "text": "A. 经常参与",
+                "weight": 25,
+                "input": false
+            },
+            {
+                "text": "B. 偶尔参与",
+                "weight": 25,
+                "input": false
+            },
+            {
+                "text": "C. 听说过但未参与",
+                "weight": 25,
+                "input": false
+            },
+            {
+                "text": "D. 从未听说过",
+                "weight": 25,
+                "input": false
+            }
+        ]
+    },
+    {
+        "topic-type": "3",
+        "topic-title": "在您看来，以下中国文化元素，法国民众对哪项最感兴趣?",
+        "topic-answer-list": [
+            {
+                "text": "A. 中医药文化",
+                "weight": 25,
+                "input": false
+            },
+            {
+                "text": "B. 武术文化",
+                "weight": 25,
+                "input": false
+            },
+            {
+                "text": "C. 传统节日习俗",
+                "weight": 25,
+                "input": false
+            },
+            {
+                "text": "D. 中国饮食文化",
+                "weight": 25,
+                "input": false
+            }
+        ]
+    },
+    {
+        "topic-type": "3",
+        "topic-title": "您参加中法文化交流活动的频率是?",
+        "topic-answer-list": [
+            {
+                "text": "A. 每月至少一次",
+                "weight": 25,
+                "input": false
+            },
+            {
+                "text": "B. 每季度 1 - 2 次",
+                "weight": 25,
+                "input": false
+            },
+            {
+                "text": "C. 每年 1 - 2 次",
+                "weight": 25,
+                "input": false
+            },
+            {
+                "text": "D. 几乎不参加",
+                "weight": 25,
+                "input": false
+            }
+        ]
+    },
+    {
+        "topic-type": "4",
+        "topic-title": "您参与中法文化交流活动的主要动机是什么?（可多选）【多选题】",
+        "topic-answer-list": [
+            {
+                "text": "A. 丰富业余生活",
+                "weight": 20,
+                "input": false
+            },
+            {
+                "text": "B. 深入了解法国文化",
+                "weight": 20,
+                "input": false
+            },
+            {
+                "text": "C. 助力中法友好往来",
+                "weight": 20,
+                "input": false
+            },
+            {
+                "text": "D. 提升自身文化素养",
+                "weight": 20,
+                "input": false
+            },
+            {
+                "text": "E. 活动有吸引力",
+                "weight": 20,
+                "input": false
+            }
+        ]
+    },
+    {
+        "topic-type": "3",
+        "topic-title": "您觉得当下中法文化线上交流平台内容丰富度如何?",
+        "topic-answer-list": [
+            {
+                "text": "A. 非常丰富，能满足多样化需求",
+                "weight": 25,
+                "input": false
+            },
+            {
+                "text": "B. 比较丰富，还有提升空间",
+                "weight": 25,
+                "input": false
+            },
+            {
+                "text": "C. 内容较单一",
+                "weight": 25,
+                "input": false
+            },
+            {
+                "text": "D. 没使用过，不了解",
+                "weight": 25,
+                "input": false
+            }
+        ]
+    },
+    {
+        "topic-type": "3",
+        "topic-title": "在您看来，中法文化交流活动在促进双方文化融合方面成效如何?",
+        "topic-answer-list": [
+            {
+                "text": "A. 成效显著，极大促进了文化融合",
+                "weight": 25,
+                "input": false
+            },
+            {
+                "text": "B. 有一定成效，但还有提升空间",
+                "weight": 25,
+                "input": false
+            },
+            {
+                "text": "C. 成效不明显",
+                "weight": 25,
+                "input": false
+            },
+            {
+                "text": "D. 难以判断",
+                "weight": 25,
+                "input": false
+            }
+        ]
+    },
+    {
+        "topic-type": "4",
+        "topic-title": "您期望未来中法文化交流增加哪些活动类型?（可多选）【多选题】",
+        "topic-answer-list": [
+            {
+                "text": "A. 中法乡村文化交流",
+                "weight": 25,
+                "input": false
+            },
+            {
+                "text": "B. 中法青年科技文化交流",
+                "weight": 25,
+                "input": false
+            },
+            {
+                "text": "C. 中法音乐创作交流营",
+                "weight": 25,
+                "input": false
+            },
+            {
+                "text": "D. 中法历史遗迹保护交流",
+                "weight": 25,
+                "input": false
+            }
+        ]
+    },
+    {
+        "topic-type": "4",
+        "topic-title": "您认为推动中法文化交流，民间组织应发挥什么作用?（可多选）【多选题】",
+        "topic-answer-list": [
+            {
+                "text": "A. 组织中法民间艺术赛事",
+                "weight": 25,
+                "input": false
+            },
+            {
+                "text": "B. 开展中法家庭互访活动",
+                "weight": 25,
+                "input": false
+            },
+            {
+                "text": "C. 搭建中法文化交流线上社区",
+                "weight": 25,
+                "input": false
+            },
+            {
+                "text": "D. 举办中法文化交流公益讲座",
+                "weight": 25,
+                "input": false
+            }
+        ]
+    },
+    {
+        "topic-type": "4",
+        "topic-title": "对于提升中法文化交流效果，您有哪些其他建议?（可多选）【多选题】",
+        "topic-answer-list": [
+            {
+                "text": "A. 优化文化交流活动宣传推广",
+                "weight": 25,
+                "input": false
+            },
+            {
+                "text": "B. 加大政府资金扶持力度",
+                "weight": 25,
+                "input": false
+            },
+            {
+                "text": "C. 促进文化产业深度合作",
+                "weight": 25,
+                "input": false
+            },
+            {
+                "text": "D. 培养更多中法文化交流专业人才",
+                "weight": 25,
+                "input": false
+            }
+        ]
+    }
+]
