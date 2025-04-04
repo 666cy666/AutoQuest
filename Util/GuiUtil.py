@@ -1,5 +1,5 @@
 from PyQt6.QtWidgets import (QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
-                             QLineEdit, QSpinBox, QComboBox, QPushButton, QLabel, QDialog, QScrollArea, QSlider, QMessageBox, QTextEdit)
+                             QLineEdit, QSpinBox, QComboBox, QPushButton, QLabel, QDialog, QScrollArea, QSlider, QMessageBox, QTextEdit, QCheckBox)
 from PyQt6.QtCore import Qt, QThread, pyqtSignal
 import json
 import os
@@ -71,6 +71,9 @@ class MainWindow(QMainWindow):
         self.url_input.editingFinished.connect(self.save_config)
         self.count_input.editingFinished.connect(self.save_config)
         self.mode_select.currentIndexChanged.connect(self.save_config)
+        self.browser_select.currentIndexChanged.connect(self.save_config)
+        self.browser_path_input.editingFinished.connect(self.save_config)
+        self.headless_checkbox.stateChanged.connect(self.save_config)
 
     def load_config(self):
         config_path = os.path.join("Config", "setting.json")
@@ -88,6 +91,11 @@ class MainWindow(QMainWindow):
             new_config = self.config.copy()
             new_config["url"] = self.url_input.text()
             new_config["count"] = self.count_input.value()
+            
+            # 更新浏览器配置
+            new_config["browser"]["driver_type"] = [self.browser_select.currentText()]
+            new_config["browser"]["driver_path"] = self.browser_path_input.text()
+            new_config["browser"]["headless"] = self.headless_checkbox.isChecked()
             
             # 根据下拉框选择更新mode-type
             mode_index = self.mode_select.currentIndex()
@@ -122,6 +130,12 @@ class MainWindow(QMainWindow):
             if hasattr(self, 'mode_select'):
                 mode_type = config["mode"].get("mode-type", "average-mode")
                 self.mode_select.setCurrentIndex(0 if mode_type == "average-mode" else 1)
+            if hasattr(self, 'browser_select'):
+                self.browser_select.setCurrentText(config["browser"]["driver_type"][0])
+            if hasattr(self, 'browser_path_input'):
+                self.browser_path_input.setText(config["browser"]["driver_path"])
+            if hasattr(self, 'headless_checkbox'):
+                self.headless_checkbox.setChecked(config["browser"]["headless"])
                 
             return config
             
@@ -150,6 +164,36 @@ class MainWindow(QMainWindow):
         count_layout.addWidget(count_label)
         count_layout.addWidget(self.count_input)
         layout.addLayout(count_layout)
+        
+        # 浏览器选择
+        browser_layout = QHBoxLayout()
+        browser_label = QLabel("浏览器类型:")
+        self.browser_select = QComboBox()
+        self.browser_select.addItems(['chrome', 'edge'])
+        current_browser = self.config["browser"]["driver_type"][0]
+        self.browser_select.setCurrentText(current_browser)
+        browser_layout.addWidget(browser_label)
+        browser_layout.addWidget(self.browser_select)
+        layout.addLayout(browser_layout)
+        
+        # 浏览器路径
+        browser_path_layout = QHBoxLayout()
+        browser_path_label = QLabel("浏览器路径:可为空，默认使用系统默认浏览器")
+        self.browser_path_input = QLineEdit()
+        self.browser_path_input.setText(self.config["browser"]["driver_path"])
+        self.browser_path_input.setPlaceholderText("请输入浏览器路径")
+        browser_path_layout.addWidget(browser_path_label)
+        browser_path_layout.addWidget(self.browser_path_input)
+        layout.addLayout(browser_path_layout)
+        
+        # 无头模式选择
+        headless_layout = QHBoxLayout()
+        headless_label = QLabel("无头模式:")
+        self.headless_checkbox = QCheckBox()
+        self.headless_checkbox.setChecked(self.config["browser"]["headless"])
+        headless_layout.addWidget(headless_label)
+        headless_layout.addWidget(self.headless_checkbox)
+        layout.addLayout(headless_layout)
         
         # 模式选择
         mode_layout = QHBoxLayout()

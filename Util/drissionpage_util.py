@@ -18,14 +18,26 @@ from selenium.webdriver.common.by import By
 from DrissionPage import ChromiumPage
 from webdriver_manager.chrome import ChromeDriverManager
 
+from Util.FileUtil import SettingLoader
 
 def choose_driver():
-
-    driver_list = ['Chorme', 'Edge']
-    driver_name = 'Edge'
+    settings = SettingLoader().get_key_mapping()
+    
+    # 从配置中获取浏览器设置
+    driver_type = settings["browser"]["driver_type"][0]
+    is_headless = settings["browser"]["headless"]
+    driver_path = settings["browser"]["driver_path"]
     # 设置启动端口，静音
     co = ChromiumOptions().set_address("127.0.0.1:9222").mute(True)
-
+    if is_headless:
+        print("开启无头模式，系统将不显示浏览器窗口")
+        co.headless()
+    if driver_type == 'edge':
+        print("使用Edge浏览器")
+        # 若driverPath为空
+        if driver_path == "":
+            driver_path = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+        co.set_browser_path(driver_path)
     chromium_driver = Chromium(addr_or_opts=co)  # 重新创建 Chromium 实例
     # 挂载dom后加载
     chromium_driver.set.load_mode.normal()

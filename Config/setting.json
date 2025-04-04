@@ -1,6 +1,13 @@
 {
   "url": "https://www.wjx.cn/vm/tL4FoDX.aspx",
   "count": 10,
+  "browser": {
+    "headless": false,
+    "driver_path": "",
+    "driver_type": [
+      "edge"
+    ]
+  },
   "mode": {
     "mode-type": "average-mode",
     "average-mode": "平均模式：所有选项初始化概率均一致",
