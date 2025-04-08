@@ -7,14 +7,23 @@ import json
 import random
 sys.path.append('./Util')
 
+def get_base_dir():
+    """获取 exe 或脚本所在的目录"""
+    if getattr(sys, 'frozen', False):
+        return os.path.dirname(sys.executable)  # exe 所在目录
+    else:
+        return os.path.dirname(os.path.abspath(__file__))  # 脚本所在目录
+
 # 初始化文件夹
 def init_folder():
     # 获取当前脚本所在目录
-    current_dir = os.getcwd()
+    current_dir = get_base_dir()
     output_dir = os.path.join(current_dir, "Output")
     log_dir = os.path.join(current_dir, "Log")
+    config_dir = os.path.join(current_dir, "Config")
     os.makedirs(output_dir, exist_ok=True)
     os.makedirs(log_dir, exist_ok=True)
+    os.makedirs(config_dir, exist_ok=True)
 
 # 根据时间戳返回文件名
 def get_file_name_by_timestamp():
@@ -45,7 +54,7 @@ def save_label_json(file_content, file_name="", is_extend=False):
     """
     try:
         # 获取当前脚本所在目录
-        current_dir = os.getcwd()
+        current_dir = get_base_dir()
         output_dir = os.path.join(current_dir, "Config")
         
         # 生成文件名
@@ -85,7 +94,7 @@ def load_json(file_path):
 
 def save_temp(file_path):
     # 将file_path保存到temp目录下
-    current_dir = os.getcwd()
+    current_dir = get_base_dir()
     output_dir = os.path.join(current_dir, "Output", "temp")
     file_name = os.path.basename(file_path)
     temp_path = os.path.join(output_dir, file_name)
@@ -95,7 +104,7 @@ def save_temp(file_path):
 class SettingLoader:
     _instance = None
     _key_mapping = None
-    _json_path = 'Config/setting.json'
+    _json_path = os.path.join(get_base_dir(), "setting.json")
 
     def __new__(cls):
         if cls._instance is None:

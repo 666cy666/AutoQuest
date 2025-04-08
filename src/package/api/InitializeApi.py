@@ -1,7 +1,7 @@
 from Util.drissionpage_util import drissionPage
 from DrissionPage._functions.by import By
 import random
-from Util.FileUtil import save_label_json
+from Util.FileUtil import save_label_json, get_base_dir
 import os
 
 def initialize(url):
@@ -50,7 +50,7 @@ def initialize(url):
     # 截取url最后的字符串
     name = url.split('/')[-1].split('.')[0]
     save_path = save_label_json(topic_data_list, name)
-    output_dir = os.path.join(os.getcwd(), "Output", f"data-{name}")
+    output_dir = os.path.join(get_base_dir(), "Output", f"data-{name}")
     os.makedirs(output_dir, exist_ok=True)
     print(f"保存初始化权重保存路径: {save_path}")
     print(f"答案选择输出路径: {output_dir}")

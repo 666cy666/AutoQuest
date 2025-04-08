@@ -7,7 +7,7 @@ import sys
 
 from Api.InitializeApi import initialize
 from Api.RunApi import run
-from Util.FileUtil import init_folder
+from Util.FileUtil import init_folder, get_base_dir
 from Util.stdout_util import StdoutRedirector
 
 class MainWindow(QMainWindow):
@@ -74,15 +74,6 @@ class MainWindow(QMainWindow):
         self.browser_select.currentIndexChanged.connect(self.save_config)
         self.browser_path_input.editingFinished.connect(self.save_config)
         self.headless_checkbox.stateChanged.connect(self.save_config)
-
-    def load_config(self):
-        config_path = os.path.join("Config", "setting.json")
-        try:
-            with open(config_path, 'r', encoding='utf-8') as f:
-                return json.load(f)
-        except Exception as e:
-            print(f"加载配置文件失败: {e}")
-            return {}
         
     def save_config(self):
         """保存配置到JSON文件"""
@@ -105,7 +96,7 @@ class MainWindow(QMainWindow):
                 new_config["mode"]["mode-type"] = "other-mode"
             
             # 写入JSON文件
-            config_path = os.path.join("Config", "setting.json")
+            config_path = os.path.join(get_base_dir(), "setting.json")
             with open(config_path, 'w', encoding='utf-8') as f:
                 json.dump(new_config, f, ensure_ascii=False, indent=2)
             
@@ -117,7 +108,7 @@ class MainWindow(QMainWindow):
 
     def load_config(self):
         """加载配置文件并更新界面"""
-        config_path = os.path.join("Config", "setting.json")
+        config_path = os.path.join(get_base_dir(), "setting.json")
         try:
             with open(config_path, 'r', encoding='utf-8') as f:
                 config = json.load(f)

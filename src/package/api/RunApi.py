@@ -1,4 +1,4 @@
-from Util.FileUtil import load_json, save_json
+from Util.FileUtil import load_json, save_json, get_base_dir
 from Util.drissionpage_util import drissionPage
 from selenium.webdriver.common.by import By
 from time import sleep
@@ -40,8 +40,8 @@ def run(url, count=10):
     if drissionPage.get_element(xpath_kind=By.CLASS_NAME,xpath='layui-layer-btn1',timeout=2):
         drissionPage.click_element(xpath_kind=By.CLASS_NAME,xpath='layui-layer-btn1')
     name = url.split('/')[-1].split('.')[0]
-    output_dir = os.path.join(os.getcwd(), "Output", f"data-{name}")
-    answer_data_url = os.path.join(os.getcwd(), "Config", f"data-{name}.json")
+    output_dir = os.path.join(get_base_dir(), "Output", f"data-{name}")
+    answer_data_url = os.path.join(get_base_dir(), "Config", f"data-{name}.json")
     if not os.path.exists(answer_data_url):
         print(f"答案数据不存在,请先初始化程序并调整权重")
         return

@@ -210,7 +210,7 @@ drissionPage = get_drissionPage()
 #     # 谷歌浏览器可执行文件的完整路径
 #     chrome_path = r'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
 #     # 指定谷歌驱动目标位置
-#     current_directory = os.getcwd()
+#     current_directory = get_base_dir()
 #     # 构建目标文件夹路径
 #     target_directory = os.path.join(current_directory, "drive")
 #     # 驱动名称
