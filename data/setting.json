@@ -1,8 +1,8 @@
 {
-  "url": "https://www.wjx.cn/vm/tL4FoDX.aspx",
+  "url": "https://www.wjx.cn/vm/wkcsg02.aspx",
   "count": 10,
   "browser": {
-    "headless": false,
+    "headless": true,
     "driver_path": "",
     "driver_type": [
       "edge"
@@ -14,8 +14,8 @@
     "other-mode": "其他模式：对于”其他“选项，需要手动填写答案的选项概率为1-5%"
   },
   "topic-type": {
-    "1": "判断题",
-    "2": "填空题",
+    "1": "填空题",
+    "2": "判断题",
     "3": "单选题",
     "4": "多选题"
   }

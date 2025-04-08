@@ -1,24 +1,13 @@
-import os
-import re
-import shutil
-import subprocess
-
 from DrissionPage._configs.chromium_options import ChromiumOptions
-from DrissionPage._elements.chromium_element import ChromiumElement
 from DrissionPage._base.chromium import Chromium
 from DrissionPage._elements.none_element import NoneElement
 from functools import wraps
 
 from DrissionPage.errors import PageDisconnectedError
-from injector import inject, Module, provider, singleton, Injector
-from selenium.common import SessionNotCreatedException
-from selenium.webdriver.chrome import webdriver
-from selenium.webdriver.chrome.service import Service
+from injector import Module, provider, singleton, Injector
 from selenium.webdriver.common.by import By
-from DrissionPage import ChromiumPage
-from webdriver_manager.chrome import ChromeDriverManager
 
-from Util.FileUtil import SettingLoader
+from src.package.utils.FileUtil import SettingLoader
 
 def choose_driver():
     settings = SettingLoader().get_key_mapping()
@@ -200,8 +189,9 @@ def get_drissionPage():
     injector = Injector([BrowserModule])
     # 通过 Injector 获取 ChromiumPage 单例实例
     return injector.get(DrissionPage_Util)
+    # return False
 
-drissionPage = get_drissionPage()
+# drissionPage = get_drissionPage()
 
 
 # def update_chrome_driver_by_windows():

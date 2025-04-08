@@ -6,8 +6,9 @@ import builtins
 
 from PyQt6.QtWidgets import QTextEdit, QApplication
 from PyQt6.QtCore import QObject, pyqtSignal
+from src.package.config.paths import log_path
 
-log_path = './Log/log.txt'
+print(log_path)
 
 # 保存原始的 print 函数
 original_print = builtins.print
