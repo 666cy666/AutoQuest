@@ -74,9 +74,6 @@
    - 点击"开始程序"按钮
 
    - 程序会自动根据权重随机选择答案
-   
-
-<img src="docs/images/image-20250403232700576.png" width="500" style="float: left; margin-right: 20px;" />
 
 4. **终止程序**
    - 点击"重启以中止程序"按钮
